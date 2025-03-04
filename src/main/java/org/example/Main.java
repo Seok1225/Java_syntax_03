@@ -1,78 +1,29 @@
 package org.example;
 
-// 문제 : a와 b가 가지고 있는 값을 서로 뒤바꿔주세요. // 조건 : 숫자와 사칙연산 사용 금지
-
-// 문제 : 실행되는 출력문에는 참 그렇지 않으면 거짓 이라고 적어주세요.
-
 class Main {
-    public static void main(String[] args) {
-        if ( true ) {
-            System.out.println("참1");
-        }
+    public static void main(String[] args)
+    {
+        int age = 10;
 
-        if ( false ) {
-            System.out.println("거짓1");
-        }
+// v1
+        if ( age < 10 ) { System.out.println("아동/영유아"); }
+        if ( age >= 10 && age < 20 ) { System.out.println("10대"); }
+        if ( age >= 20 ) { System.out.println("20대 이상"); }
 
-        int a = 10;
+// v2
+        if ( age < 10 ) { System.out.println("아동/영유아"); }
+        else if ( age >= 10 && age < 20 ) { System.out.println("10대"); }
+        else if ( age >= 20 ) { System.out.println("20대 이상"); }
 
-        // `==` => 같다.
-        if ( a == 10 ) {
-            System.out.println("참2");
-        }
+// v2-2
+        if ( age < 10 ) { System.out.println("아동/영유아"); }
+        else if ( age < 20 ) { System.out.println("10대"); } // 여기서는 `나이가 10살 보다 크다`라는 조건을 빼도 된다. 왜냐하면 10살 보다 작았다면 애초에 이 부분이 실행되지 않는다. 바로 윗줄조건(age < 10)이 참으로 나와서에서 윗줄만 실행됨(else 로 fi문 들을 묶은 덕분)
+        else if ( age >= 20 ) { System.out.println("20대 이상"); }
 
-        // `!=` => 같지 않다.
-        if ( a != 10 ) {
-            System.out.println("거짓2");
-        }
+// v3
+        if ( age < 10 ) { System.out.println("아동/영유아"); }
+        else if ( age < 20 ) { System.out.println("10대"); }
+        else { System.out.println("20대 이상"); } // 전체(3가지) 경우의 수 중에서 무조건 정답이 1개 존재한다면, 마지막 if문의 조건식은 지우는게 좋다.
 
-        if ( a > 10 ) {
-            System.out.println("거짓3");
-        }
-
-        if ( a >= 10 ) {
-            System.out.println("참3");
-        }
-
-        int b = 10;
-
-        if ( a == b ) {
-            System.out.println("참4");
-        }
-
-        // boolean c => c 에는 오직 true/false 만 담을 수 있다.
-        boolean c = a != b;
-
-        if ( c ) {
-            System.out.println("거짓4");
-        }
-
-        if ( c == false ) {
-            System.out.println("참5");
-        }
-
-        // `!` => 반전
-        if ( !c ) {
-            System.out.println("참6");
-        }
-
-        // `!` => 반전
-        if ( !(!c) ) {
-            System.out.println("거짓5");
-        }
-
-        boolean d = true;
-
-        if ( c != d ) {
-            System.out.println("참7");
-        }
-
-        if ( 20 > 2 && 10 > 3 && true != false && 10 != 10 ) {
-            System.out.println("거짓6");
-        }
-
-        if ( 10 != 10 || 10 < 2 ) {
-            System.out.println("거짓7");
-        }
     }
 }
