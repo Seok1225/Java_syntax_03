@@ -2,19 +2,77 @@ package org.example;
 
 // 문제 : a와 b가 가지고 있는 값을 서로 뒤바꿔주세요. // 조건 : 숫자와 사칙연산 사용 금지
 
-public class Main {
+// 문제 : 실행되는 출력문에는 참 그렇지 않으면 거짓 이라고 적어주세요.
+
+class Main {
     public static void main(String[] args) {
-        int age = 50;
-
-        System.out.println("당신의 나이 : " + age);
-// 당신의 나이 : 50
-
-        if (age >= 20) { // age >= 20 (은)는 결국 실행되면 true 가 된다.
-            System.out.println("성년");
+        if ( true ) {
+            System.out.println("참1");
         }
 
-        if (age < 20) { // age < 20 (은)는 결국 실행되면 false 가 된다.
-            System.out.println("미성년");
+        if ( false ) {
+            System.out.println("거짓1");
+        }
+
+        int a = 10;
+
+        // `==` => 같다.
+        if ( a == 10 ) {
+            System.out.println("참2");
+        }
+
+        // `!=` => 같지 않다.
+        if ( a != 10 ) {
+            System.out.println("거짓2");
+        }
+
+        if ( a > 10 ) {
+            System.out.println("거짓3");
+        }
+
+        if ( a >= 10 ) {
+            System.out.println("참3");
+        }
+
+        int b = 10;
+
+        if ( a == b ) {
+            System.out.println("참4");
+        }
+
+        // boolean c => c 에는 오직 true/false 만 담을 수 있다.
+        boolean c = a != b;
+
+        if ( c ) {
+            System.out.println("거짓4");
+        }
+
+        if ( c == false ) {
+            System.out.println("참5");
+        }
+
+        // `!` => 반전
+        if ( !c ) {
+            System.out.println("참6");
+        }
+
+        // `!` => 반전
+        if ( !(!c) ) {
+            System.out.println("거짓5");
+        }
+
+        boolean d = true;
+
+        if ( c != d ) {
+            System.out.println("참7");
+        }
+
+        if ( 20 > 2 && 10 > 3 && true != false && 10 != 10 ) {
+            System.out.println("거짓6");
+        }
+
+        if ( 10 != 10 || 10 < 2 ) {
+            System.out.println("거짓7");
         }
     }
 }
