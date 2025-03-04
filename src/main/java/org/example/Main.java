@@ -1,29 +1,90 @@
 package org.example;
 
+// 문제 : 할인 대상인지 아닌지 출력해주세요.
+// 조건 : 나이가 19세 이하이거나 60세 이상이면 할인 대상입니다.
+// 조건 : 출력예시 처럼 출력되어야 합니다.
+// 조건 : `구현시작` 부분만 수정 할 수 있습니다.
+// 조건 : 4가지 이상의 방법으로 풀어야 합니다.
+// 조건 : 그 중 2가지 방법은 `&&, ||`없이 풀어야 합니다.
+
+import javax.swing.*;
+
 class Main {
-    public static void main(String[] args)
-    {
-        int age = 10;
+    public static void main(String[] args) {
+        int age = 11; // 이 값을 바꿔가면서 실행해보세요.
 
-// v1
-        if ( age < 10 ) { System.out.println("아동/영유아"); }
-        if ( age >= 10 && age < 20 ) { System.out.println("10대"); }
-        if ( age >= 20 ) { System.out.println("20대 이상"); }
+        System.out.println("당신의 나이는 " + age + "살 입니다.");
 
-// v2
-        if ( age < 10 ) { System.out.println("아동/영유아"); }
-        else if ( age >= 10 && age < 20 ) { System.out.println("10대"); }
-        else if ( age >= 20 ) { System.out.println("20대 이상"); }
+//         구현시작
+        System.out.println("첫번째");
+        if(age < 20)
+        {
+            System.out.println("할인대상");
+        }
+        else if (age > 59)
+        {
+            System.out.println("할인대상");
+        }
+        else
+        {
+            System.out.println("할인 대상이 아닙니다.");
+        }
 
-// v2-2
-        if ( age < 10 ) { System.out.println("아동/영유아"); }
-        else if ( age < 20 ) { System.out.println("10대"); } // 여기서는 `나이가 10살 보다 크다`라는 조건을 빼도 된다. 왜냐하면 10살 보다 작았다면 애초에 이 부분이 실행되지 않는다. 바로 윗줄조건(age < 10)이 참으로 나와서에서 윗줄만 실행됨(else 로 fi문 들을 묶은 덕분)
-        else if ( age >= 20 ) { System.out.println("20대 이상"); }
+        System.out.println("두번째");
+        if(age <= 19)
+        {
+            System.out.println("할인대상");
+        }
+        else if(age  >= 60)
+        {
+            System.out.println("할인대상");
+        }
+        else
+        {
+            System.out.println("할인 대상이 아닙니다.");
+        }
 
-// v3
-        if ( age < 10 ) { System.out.println("아동/영유아"); }
-        else if ( age < 20 ) { System.out.println("10대"); }
-        else { System.out.println("20대 이상"); } // 전체(3가지) 경우의 수 중에서 무조건 정답이 1개 존재한다면, 마지막 if문의 조건식은 지우는게 좋다.
+        System.out.println("세번째");
+        int young = 20;
+        int old = 59;
+        if(age < young)
+        {
+            System.out.println("할인대상");
+        }
+        else if (age > 59)
+        {
+            System.out.println("할인대상");
+        }
+        else
+        {
+            System.out.println("할인 대상이 아닙니다.");
+        }
 
+        System.out.println("네번째");
+        if(age <= 19)
+        {
+            System.out.println("할인대상");
+        }
+        if(age >= 60)
+        {
+            System.out.println("할인대상");
+        }
+        if(age >= 20 )
+        {
+            if (age < 60){
+                System.out.println("할인 대상이 아닙니다.");
+            }
+        }
+        System.out.println("다섯번째");
+        if ( age <= 19 ) {
+            System.out.println("할인 대상");
+        }
+        else if ( age >= 60 ) {
+            System.out.println("할인 대상");
+        }
+        else {
+            System.out.println("할인 대상이 아닙니다.");
+        }
+        // 출력 => 할인대상입니다. 또는 할인 대상이 아닙니다.
     }
 }
