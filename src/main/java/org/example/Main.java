@@ -4,14 +4,17 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
-        int x = 10;
+        int age = 50;
 
-        System.out.println("x"); // 출력 : x
-        System.out.println(x); // 출력 : 10
-        System.out.println("x" + x); // 출력 : x10
-        System.out.println("x : " + x); // 출력 : x : 10
-        System.out.println("x : " + x * 10); // 출력 : x : 100
-        System.out.println("x : " + x + 10); // 출력 : x : 1010
-        System.out.println("x : " + (x + 10)); // 출력 : x : 20
+        System.out.println("당신의 나이 : " + age);
+// 당신의 나이 : 50
+
+        if (age >= 20) { // age >= 20 (은)는 결국 실행되면 true 가 된다.
+            System.out.println("성년");
+        }
+
+        if (age < 20) { // age < 20 (은)는 결국 실행되면 false 가 된다.
+            System.out.println("미성년");
+        }
     }
 }
