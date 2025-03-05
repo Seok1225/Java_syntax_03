@@ -1,23 +1,18 @@
 package org.example;
 // 문제 : 아래와 같이 출력해주세요.
-// 문제 : 단을 `* 1000`부터 `* -250`까지 출력해주세요.
+// 문제 : 1부터 5까지의 합을 출력해주세요.
 
 class Main {
     public static void main(String[] args) {
-        int dan = 8;
 
-        int i = 1000;
+        int i = 1;
+        int sum = 0;
 
-        while(i >= -250)
+        while(i <= 5)
         {
-            System.out.println(dan + " * " + i + " = " + dan * i);
-            i--;
+            sum += i;
+            i++;
         }
-        // 출력
-    /*
-    8 * 1000 = 8000
-    ...
-    8 * -500 = -4000
-    */
+        System.out.println("1부터 5까지의 합은 = " + sum + " 입니다 ");
     }
 }
