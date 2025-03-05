@@ -8,7 +8,7 @@ class Main {
         int i = -100;
         int sum = 0;
 
-        while(i < 25)
+        while(i <= 25)
         {
             sum += i;
             i++;
