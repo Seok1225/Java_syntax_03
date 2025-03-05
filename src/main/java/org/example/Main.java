@@ -1,18 +1,12 @@
 package org.example;
-
+// 문제 1부터 5까지 출력해주세요.
 class Main {
     public static void main(String[] args) {
 
-        gugudan(8,1);
-
-
-    }
-    public  static  void gugudan(int dan , int i)
-    {
-        if(i >= 1000)return;
-        {
-            System.out.println(dan + "x" +i +"=" + dan * i);
-            gugudan(dan, i + 1);
+        int i = 1;
+        while(i <= 5) {
+            System.out.println(i);
+            i++;
         }
     }
 }
