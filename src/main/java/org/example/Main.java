@@ -1,6 +1,6 @@
 package org.example;
 // 문제 : 아래와 같이 출력해주세요.
-// 문제 : 단을 `* 1000`부터 `* 1`까지 출력해주세요.
+// 문제 : 단을 `* 1000`부터 `* -250`까지 출력해주세요.
 
 class Main {
     public static void main(String[] args) {
@@ -8,7 +8,7 @@ class Main {
 
         int i = 1000;
 
-        while(i >= 1)
+        while(i >= -250)
         {
             System.out.println(dan + " * " + i + " = " + dan * i);
             i--;
