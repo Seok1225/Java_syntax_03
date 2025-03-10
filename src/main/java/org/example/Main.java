@@ -1,34 +1,35 @@
 package org.example;
-import java.util.Scanner;
-// 1. arr1 변수 [true, false , true]
-// 2. arr2 변수 [3.14, 7,77, 11,,11]
-// 3. arr3 변수 [1~10]
+// name , isMarried 또한 this를 활용해서 객체 내부의 데이터를 introduce가 쓸 수 있도록
+
 class Main {
     public static void main(String[] args) {
-     // 1번
-//        boolean[] arr1 = new boolean[3];
-//        arr1[0] = true;
-//        arr1[1] = false;
-//        arr1[2] = true;
-//
-//        System.out.println(arr1[0]);
-//        System.out.println(arr1[1]);
-//        System.out.println(arr1[2]);
 
-//        double[] arr1 = new double[3];
-//        arr1[0] = 3.14;
-//        arr1[1] = 7.77;
-//        arr1[2] = 11.11;
-//
-//        System.out.println(arr1[0]);
-//        System.out.println(arr1[1]);
-//        System.out.println(arr1[2]);
+        사람 a = new 사람();
+        a.age = 23;
+        a.name = "김철수";
+        a.isMarried = false;
+        a.introduce();
 
-//        int[] arr1 = new int[10];
-//
-//        for(int i = 0; i < arr1.length; i++){
-//            arr1[i] = i + 1;
-//            System.out.println(arr1[i]);
-//        }
+        사람 b = new 사람();
+        b.age = 24;
+        b.name = "박영수";
+        b.isMarried = true;
+        b.introduce();
+    }
+}
+class 사람{
+    int age;
+    String name;
+    boolean isMarried;
+
+    void introduce()
+    {
+        int age = this.age;
+        String name = this.name;
+        boolean isMarried = this.isMarried;
+        System.out.println("==자기소개==");
+        System.out.printf("이름 : %s\n", name);
+        System.out.printf("나이 : %d\n", age);
+        System.out.printf("결혼여부 : %b\n", isMarried);
     }
 }
