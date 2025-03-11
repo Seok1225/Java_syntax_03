@@ -1,42 +1,34 @@
 package org.example;
-//문제 - 자동차 설계도를 만들어주세요.
-//문제 - 자동차 객체를 담을 변수를 만들어주세요.
-//문제 - 자동차 객체를 만들고 변수에 담아주세요.
-//문제 - 자동차 객체마다 서로 다른 최고속력를 가지도록 해주세요.
-//문제 - 1개의 자동차가 3번 달리게 해주세요.
-//문제 - 객체를 사용하지 않고 두번째 플레이어를 만들어주세요.
-//문제 - 3개의 자동차가 각각 1번씩 달리게 해주세요.
-//문제 - 각각의 자동차가 서로 다른 최고속력으로 달리게 해주세요.
-//문제 - 번호가 다른 각각의 자동차가 서로 다른 최고속력으로 달리게 해주세요.
+
+import java.awt.*;
+import java.util.Arrays;
 
 class Main {
     public static void main(String[] args) {
+        String msg = greet("Jin");
+        System.out.println(msg);
 
-        자동차 a = new 자동차();
-        자동차 b = new 자동차();
-        자동차 c = new 자동차();
+        Point point = createPoint(5, 10);
+        System.out.println("Point create at (" + point.x + ", " + point.y + ")");
 
-        a.최고속력 = 100;
-        a.번호 = 1;
-        b.최고속력 = 200;
-        b.번호 = 2;
-        c.최고속력 = 300;
-        c.번호 = 3;
-        System.out.println(a.최고속력);
-        System.out.println(b.최고속력);
-        System.out.println(c.최고속력);
-        a.달리다();
-        b.달리다();
-        c.달리다();
+        int[] evens = firstNEvenNumbers(5);//
+        System.out.println("first 5 even numbers : " + Arrays.toString(evens));
     }
-}
 
-class 자동차
-{
-    int 최고속력;
-    int 번호;
+    public static String greet(String name) {
+        return "Hello, " + name + "!";
+    }
 
-    void 달리다(){
-        System.out.println(this.번호 + "번 자동차가" + this.최고속력 + "km/h 달립니다");
+    public static Point createPoint(int x, int y) {
+        return new Point(x, y);
+    }
+
+    public static int[] firstNEvenNumbers(int n) {
+        int[] evenNumbers = new int[n];
+
+        for (int i = 0, num = 2; i < n; i++, num += 2) {
+            evenNumbers[i] = num;
+        }
+        return evenNumbers;
     }
 }
