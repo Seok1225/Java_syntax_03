@@ -1,117 +1,40 @@
 package org.example;
-// 상황 : DVD방에 3개의 서로다른 tv가 있다. 영업을 하다보니 각 tv의 특별한 기능은 거의 사용될 일이 없고 기본적인 켜기/끄기 만 사용된다. 현재 리모콘이 3개나 있는습니다.
-// 문제 : 알바를 편하게 하기 위해서 표준Tv 리모콘을 구현해주세요.
 
 class Main {
     public static void main(String[] args) {
-        System.out.println("== 표준Tv 리모콘 들여오기 전 ==");
 
-        샤오미Tv a샤오미Tv = new 샤오미Tv();
-        삼성Tv a삼성Tv = new 삼성Tv();
-        LGTv aLGTv = new LGTv();
+        int[] arr = new int[10];
 
-        a샤오미Tv.켜기();
-        // 출력 => 샤오미Tv 켜집니다.
-        a샤오미Tv.끄기();
-        // 출력 => 샤오미Tv 꺼집니다.
-        a샤오미Tv.vr켜기();
-        // 출력 => 샤오미Tv vr켜기!
+        Article[] articles = new Article[10];
 
-        a삼성Tv.켜기();
-        // 출력 => 삼성Tv 켜집니다.
-        a삼성Tv.끄기();
-        // 출력 => 삼성Tv 꺼집니다.
-        a삼성Tv.ar켜기();
-        // 출력 => 삼성Tv ar켜기!
+        Article article1 = new Article();
+        articles[0] = article1;
 
-        aLGTv.켜기();
-        // 출력 => LGTv 켜집니다.
-        aLGTv.끄기();
-        // 출력 => LGTv 꺼집니다.
-        aLGTv.게임모드전환();
-        // 출력 => LGTv 게임모드전환!
+        Article article2 = new Article();
+        articles[1] = article2;
 
-        System.out.println("== 표준Tv 리모콘 들여온 후 ==");
+        System.out.println(articles[0].id);
+        System.out.println(articles[1].id);
 
-        // 표준Tv 리모콘을 만든다.
-        표준Tv a표준Tv;
-
-        // a표준Tv 변수에 샤오미Tv 객체를 연결한다.
-        a표준Tv = a샤오미Tv;
-        a표준Tv.켜기("샤오미TV");
-        // 출력 : 샤오기TV 켜집니다.
-        a표준Tv.끄기("샤오미TV");
-        // 출력 : 샤오기TV 꺼집니다.
-
-        // a표준Tv 변수에 삼성Tv 객체를 연결한다.
-        a표준Tv = a삼성Tv;
-        a표준Tv.켜기("삼성TV");
-        // 출력 : 삼성TV 켜집니다.
-        a표준Tv.끄기("삼성TV");
-        // 출력 : 삼성TV 꺼집니다.
-
-        // a표준Tv 변수에 LGTv 객체를 연결한다.
-        a표준Tv = aLGTv;
-        a표준Tv.켜기("LGTV");
-        // 출력 : LGTV 켜집니다.
-        a표준Tv.끄기("LGTV");
-        // 출력 : LGTV 꺼집니다.
-
-        // LGTV만의 고유 기능을 표준Tv 리모콘을 이용해서 호출하기 => 불가능
-        // (LGTv) => a표준Tv 변수에 있던 표준Tv 리모콘이 LGTv리모콘화 해서 `aLGTv2` 변수에 들어간다.
-        LGTv aLGTv2 = (LGTv) a표준Tv;
-        aLGTv2.게임모드전환();
+        System.out.println(article1.id);
+        System.out.println(article2.id);
     }
 }
 
-class 표준Tv {
-    void 켜기(String tv) {
-        System.out.println(tv + " 켜집니다.");
+class Article {
+    static int lastId;
+
+    int id;
+    String regDate;
+
+    Article(){
+        this(lastId + 1, "2025-12-12 12:12:12"); //다른생성자 호출(실행) Constructor Call
+        lastId++;
     }
 
-    void 끄기(String tv) {
-        System.out.println(tv + " 꺼집니다.");
+    Article(int id, String regDate) {
+        this.id = id;
+        this.regDate = regDate;
     }
 }
 
-class 샤오미Tv extends 표준Tv {
-    void 켜기() {
-        System.out.println("샤오미Tv 켜집니다.");
-    }
-
-    void 끄기() {
-        System.out.println("샤오미Tv 꺼집니다.");
-    }
-
-    void vr켜기() {
-        System.out.println("샤오미Tv vr켜기!");
-    }
-}
-
-class 삼성Tv extends 표준Tv {
-    void 켜기() {
-        System.out.println("삼성Tv 켜집니다.");
-    }
-
-    void 끄기() {
-        System.out.println("삼성Tv 꺼집니다.");
-    }
-
-    void ar켜기() {
-        System.out.println("삼성Tv ar켜기!");
-    }
-}
-
-class LGTv extends 표준Tv {
-    void 켜기() {
-        System.out.println("LGTv 켜집니다.");
-    }
-
-    void 끄기() {
-        System.out.println("LGTv 꺼집니다.");
-    }
-
-    void 게임모드전환() {
-        System.out.println("LGTv 게임모드전환!");
-    }
-}
