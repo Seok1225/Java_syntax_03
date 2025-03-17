@@ -2,15 +2,16 @@ package org.example;
 
 import java.util.Scanner;
 
-class Main {
+public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int A = sc.nextInt();
-        int B = sc.nextInt();
-        int C = sc.nextInt();
-        System.out.println((A+B)%C);
-        System.out.println(((A%C) + (B%C))%C);
-        System.out.println((A*B)%C);
-        System.out.println(((A%C) * (B%C))%C);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+
+        System.out.println(a * (b%10));
+        System.out.println(a * ((b%100)/10) );
+        System.out.println(a * (b/100));
+        System.out.println(a * b);
+
     }
 }
